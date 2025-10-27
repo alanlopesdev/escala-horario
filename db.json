@@ -1,0 +1,16 @@
+{
+    "12345":{
+        "gerente" : "Deborah",
+        "java" : { "numero" : "2228",
+        "loja" : "copa H"
+        },
+        "func" : {
+            "375882" : {"nome":"Alan",
+        "cargo":"at2"},
+        "33333":{
+            "nome":"Noah",
+            "cargo":"at2"
+        }
+        }
+    }
+}
