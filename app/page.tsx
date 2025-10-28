@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image";
+import Link from 'next/link'
 import Logoraia from '@/public/imgs/logo-rd.png'
 import db from "@/db.json"
 import { useState } from "react";
@@ -67,8 +68,8 @@ if (islogged == false){
               <h1>Olá, {dados[matricula].gerente}! Seja bem-vinda ao Planeja RD</h1>
           </div>
           <div className="flex flex-row gap-5">
-          <div className="cursor-pointer flex border-2 border-black justify-center bg-gray-200 p-2 rounded-md min-w-70"><h1>Crie uma escala mensal ou semanal</h1></div>
-          <div className="cursor-pointer flex bg-gray-200 p-2 border-2 border-black rounded-md min-w-70 justify-center"><h1>Distribuia os horários e intervalos</h1></div>
+          <Link href="semanal-mensal" className="cursor-pointer flex bg-gray-200 p-2 border-2 border-black rounded-md min-w-70 justify-center">Crie uma escala mensal ou semanal</Link>
+          <Link href="horarios" className="cursor-pointer flex bg-gray-200 p-2 border-2 border-black rounded-md min-w-70 justify-center">Distribuia os horários e intervalos</Link>
           </div>
       </div>
   </div>
