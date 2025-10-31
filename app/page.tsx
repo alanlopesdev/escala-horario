@@ -6,7 +6,7 @@ import Logoraia from '@/public/imgs/logo-rd.png'
 import db from "@/db.json"
 import { useState } from "react";
 
-
+//
 export default function Home() {
 
   const [matricula, setMatricula] = useState(0)
@@ -36,7 +36,7 @@ if (islogged == false){
     </div>
   </header>
 
-    <div className="grid grid-rol-3 gap-y-2 border-2 border-black bg-white max-w-65 max-h-50 rounded-md p-5">
+    <main className="grid grid-rol-3 gap-y-2 border-2 border-black bg-white max-w-65 max-h-50 rounded-md p-5">
         <h1 className="text-black p-2">DIGITE SUA MATRICULA</h1>
 
         <input className="rounded-md bg-gray-200 p-2 text-black border-1"
@@ -48,8 +48,7 @@ if (islogged == false){
 
         <button className="cursor-pointer text-black border-1 p-1" onClick={EscreverNome}>Entrar</button>
         
-      </div>
-
+      </main>
   </div>
   )}
   if (islogged === true){
@@ -63,15 +62,15 @@ if (islogged == false){
           <div className="justify-items-center  min-w-25 border-2 border-black p-2 text-black"><h1>TO - OK</h1></div>
       </div>
       </header>
-      <div className="flex text-black w-250 h-100 justify-center items-center gap-30 flex-col">
+      <main className="flex text-black w-250 h-100 justify-center items-center gap-30 flex-col">
           <div>
               <h1>Olá, {dados[matricula].gerente}! Seja bem-vinda ao Planeja RD</h1>
           </div>
-          <div className="flex flex-row gap-5">
+          <nav className="flex flex-row gap-5">
           <Link href="semanal-mensal" className="cursor-pointer flex bg-gray-200 p-2 border-2 border-black rounded-md min-w-70 justify-center">Crie uma escala mensal ou semanal</Link>
           <Link href="horarios" className="cursor-pointer flex bg-gray-200 p-2 border-2 border-black rounded-md min-w-70 justify-center">Distribuia os horários e intervalos</Link>
-          </div>
-      </div>
+          </nav>
+      </main>
   </div>
   )}
 }
