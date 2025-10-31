@@ -11,6 +11,7 @@ export default function Horarios(){
     const intervalosPossiveis = []
     const SugerirIntervalo = () =>{
       //verificar H chegada
+      //teste
       //verficar cargo
       // se +2 da chegaga e !2 cargos iguais almoçando, ok almoçar
       for(let index = 0; index += 1; index > funcionarios.length){
