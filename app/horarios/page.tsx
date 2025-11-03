@@ -2,13 +2,23 @@
 
 import Image from "next/image";
 import Logoraia from '@/public/imgs/logo-rd.png'
-import { useState } from "react";
+import { useState, useEffect, use } from "react";
 import db from '@/db.json'
+import escreverVotosH from '@/app/horarios/scripts'
 
 export default function Horarios(){
+
   const funcionarios = db[12345].func
+    const [asideTexto, setAsideTexto] = useState(false)
+
+    const onClickSugestoes = () => {
+      setAsideTexto(false)
+    }
+    const onClickNSS = () => {
+      setAsideTexto(true)
+    }
     const lista = [0, 1, 2, 3]
-    const intervalosPossiveis = []
+    const intervalosPossiveis = [9, 10, 11, 12, 13, 14 , 15, 16, 17, 18, 19]
     const SugerirIntervalo = () =>{
       //verificar H chegada
       //teste
@@ -27,7 +37,10 @@ export default function Horarios(){
 
     
     return(
-<div className="flex items-center justify-center gap-2 flex-col bg-white h-full">
+<div className="flex items-center justify-center gap-2 flex-col bg-white h-screen">
+  <header className="flex flex-row w-300 gap-20">
+  <h1 className="text-black font-bold">DOM, 02/11 </h1>
+  </header>
   <header className="flex justify-center items-center flex-col">
     <div className="flex items-center flex-row gap-10">
       <div className="flex items-center flex-row">
@@ -55,11 +68,27 @@ export default function Horarios(){
     ))}
   </main>
   <aside className="text-black border-2 border-black w-90 p-2 gap-10 rounded-md flex flex-col justify-items-center">
-    <header className="justify-items-center"><h1>Sugestões</h1></header>
-    <footer className="justify-items-center overflow-y-auto"><h1>oi</h1></footer>
+    <header className="justify-center w-90 flex flex-row gap-10">
+    <div onClick={onClickSugestoes} className="cursor-pointer flex bg-blue-200 min-w-25 justify-center rounded-md p-2">
+    <h1>Sugestões</h1>
+    </div>
+    <div onClick={onClickNSS} className="cursor-pointer flex bg-blue-200  min-w-25 justify-center rounded-md p-2">
+    <h1>Votos NSS</h1>
+    </div>
+    </header>
+    <footer className="justify-items-center overflow-y-auto">
+      {
+        asideTexto === true &&(
+          escreverVotosH("12345")
+        ) ||
+        asideTexto === false && (
+          <div>sugestões</div>
+        )
+      }
+      </footer>
     </aside>
   </div>
-  <div className="text-black grid grid-cols-18 w-350 h-10 bg-blue-200">
+  <div className="items-center border-2 rounded-md text-black grid grid-cols-18 w-350 h-10 bg-blue-200">
     <h1>Hora:</h1>
     <h1>7</h1>
     <h1>8</h1>
@@ -79,7 +108,7 @@ export default function Horarios(){
     <h1>22</h1>
     <h1>23</h1>
   </div>
-  <div className="text-black grid grid-cols-18 w-350 h-10 bg-blue-200">
+  <div className="items-center border-2  rounded-md text-black grid grid-cols-18 w-350 h-10 bg-blue-200">
     <h1>NSS</h1>
   </div>
   <div className="text-black">

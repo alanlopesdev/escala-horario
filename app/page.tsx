@@ -9,7 +9,7 @@ import { useState } from "react";
 //
 export default function Home() {
 
-  const [matricula, setMatricula] = useState(0)
+  const [matricula, setMatricula] = useState("")
   const [dados, setDados] = useState({})
   const [islogged, setLogged] = useState(false)
 

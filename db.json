@@ -1,10 +1,20 @@
 {
     "12345": {
         "gerente": "Deborah",
-        "java": {
-            "numero": "2228",
-            "loja": "copa H"
-        },
+        "java": "2228",
+        "loja": "copa H",
+        "NSS": {
+    "media": 90,
+    "totalVotos": 100,
+    "votosPorHora": { 
+        "7:00": {
+            "bons": "10",
+            "ruins": "4",
+            "otimos": "96",
+            "pessimos": "1"
+        }
+    }
+},
         "func": [
             {
                 "matricula": "375882",
@@ -119,5 +129,25 @@
                 "intervalo": "13:30-14:30"
             }
         ]
-    }
+    },
+    "12333" : 
+        [
+            {
+                "matricula": "332211",
+                "nome": "Eduarda",
+                "cargo": "at1",
+                "presença": "ausente",
+                "horario": "06:00 - 14:20",
+                "intervalo": "10:00-11:00"
+            },
+            {
+                "matricula": "192837",
+                "nome": "Luana",
+                "cargo": "dermo",
+                "presença": "presente",
+                "horario": "09:30 - 17:50",
+                "intervalo": "13:30-14:30"
+            }
+        ]
+    
 }
