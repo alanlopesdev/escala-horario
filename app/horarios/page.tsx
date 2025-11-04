@@ -8,7 +8,8 @@ import escreverVotosH from '@/app/horarios/scripts'
 
 export default function Horarios(){
 
-  const funcionarios = db[12345].func
+    const funcionarios = db[12345].func
+    const votos = Object.entries(db[12345].NSS.votosPorHora)
     const [asideTexto, setAsideTexto] = useState(false)
 
     const onClickSugestoes = () => {
@@ -110,6 +111,10 @@ export default function Horarios(){
   </div>
   <div className="items-center border-2  rounded-md text-black grid grid-cols-18 w-350 h-10 bg-blue-200">
     <h1>NSS</h1>
+    {votos[0].map((votos, index) => (
+        <p>{votos.bons}</p>
+    )
+  )}
   </div>
   <div className="text-black">
     Developed by https://github.com/alanlopesdev
