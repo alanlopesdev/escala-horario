@@ -9,7 +9,7 @@ type votosPorHora = {
 
 const data = db
 
-export default function escreverVotosH(matricula:string) : any {
+export function escreverVotosH(matricula:string) : any {
     const horarios = data[matricula].NSS.votosPorHora
     const chaves = Object.keys(horarios)
     return(<div>
@@ -21,4 +21,8 @@ export default function escreverVotosH(matricula:string) : any {
     )
     }
 
-    escreverVotosH("12345")
+export function ListarHorarioIntervalo(gerente:string, matricula:string, entrada:number){
+    const horario = data[gerente].func[matricula].horario
+    
+
+}
