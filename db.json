@@ -4,150 +4,132 @@
         "java": "2228",
         "loja": "copa H",
         "NSS": {
-    "media": 90,
-    "totalVotos": 100,
-    "votosPorHora": { 
-        "7:00": {
-            "bons": "10",
-            "ruins": "4",
-            "otimos": "96",
-            "pessimos": "1"
-        }
-    }
-},
-        "func": [
-            {
-                "matricula": "375882",
+            "media": 90,
+            "totalVotos": 100,
+            "votosPorHora": { 
+                "7:00": {
+                    "bons": "10",
+                    "ruins": "4",
+                    "otimos": "96",
+                    "pessimos": "1"
+                }
+            }
+        },
+        "func": {
+            "375882": {
                 "nome": "Alan",
                 "cargo": "at2",
                 "presença": "presente",
                 "horario": "11:00 - 19:20",
                 "intervalo": "15:00-16:00"
             },
-            {
-                "matricula": "33333",
+            "33333": {
                 "nome": "Noah",
                 "cargo": "at2",
                 "presença": "ausente",
                 "horario": "09:00 - 17:20",
                 "intervalo": "13:00-14:00"
             },
-            {
-                "matricula": "918273",
+            "918273": {
                 "nome": "Tayna",
                 "cargo": "supervisora",
                 "presença": "presente",
                 "horario": "10:00 - 18:20",
                 "intervalo": "14:00-15:00"
             },
-            {
-                "matricula": "654321",
+            "654321": {
                 "nome": "Thayna",
                 "cargo": "supervisora",
                 "presença": "ausente",
                 "horario": "12:00 - 20:20",
                 "intervalo": "16:00-17:00"
             },
-            {
-                "matricula": "246810",
+            "246810": {
                 "nome": "Lucas",
                 "cargo": "supervisor",
                 "presença": "presente",
                 "horario": "09:00 - 17:20",
                 "intervalo": "13:00-14:00"
             },
-            {
-                "matricula": "135792",
+            "135792": {
                 "nome": "Anna",
                 "cargo": "farmaceutica",
                 "presença": "presente",
                 "horario": "13:00 - 21:20",
                 "intervalo": "17:00-18:00"
             },
-            {
-                "matricula": "802468",
+            "802468": {
                 "nome": "Daize",
                 "cargo": "farmaceutica",
                 "presença": "ausente",
                 "horario": "07:00 - 15:20",
                 "intervalo": "11:00-12:00"
             },
-            {
-                "matricula": "975310",
+            "975310": {
                 "nome": "Leticia",
                 "cargo": "at2",
                 "presença": "presente",
                 "horario": "14:00 - 22:20",
                 "intervalo": "18:00-19:00"
             },
-            {
-                "matricula": "610293",
+            "610293": {
                 "nome": "Erica",
                 "cargo": "at2",
                 "presença": "presente",
                 "horario": "08:00 - 16:20",
                 "intervalo": "12:00-13:00"
             },
-            {
-                "matricula": "481526",
+            "481526": {
                 "nome": "Sarah",
                 "cargo": "at1",
                 "presença": "ausente",
                 "horario": "10:30 - 18:50",
                 "intervalo": "14:30-15:30"
             },
-            {
-                "matricula": "729031",
+            "729031": {
                 "nome": "Kayki",
                 "cargo": "at1",
                 "presença": "presente",
                 "horario": "11:30 - 19:50",
                 "intervalo": "15:30-16:30"
             },
-            {
-                "matricula": "550011",
+            "550011": {
                 "nome": "Eduardo",
                 "cargo": "at1",
                 "presença": "presente",
                 "horario": "15:00 - 23:20",
                 "intervalo": "19:00-20:00"
             },
-            {
-                "matricula": "332211",
+            "332211": {
                 "nome": "Eduarda",
                 "cargo": "at1",
                 "presença": "ausente",
                 "horario": "06:00 - 14:20",
                 "intervalo": "10:00-11:00"
             },
-            {
-                "matricula": "192837",
+            "192837": {
                 "nome": "Luana",
                 "cargo": "dermo",
                 "presença": "presente",
                 "horario": "09:30 - 17:50",
                 "intervalo": "13:30-14:30"
             }
-        ]
+        }
     },
-    "12333" : 
-        [
-            {
-                "matricula": "332211",
-                "nome": "Eduarda",
-                "cargo": "at1",
-                "presença": "ausente",
-                "horario": "06:00 - 14:20",
-                "intervalo": "10:00-11:00"
-            },
-            {
-                "matricula": "192837",
-                "nome": "Luana",
-                "cargo": "dermo",
-                "presença": "presente",
-                "horario": "09:30 - 17:50",
-                "intervalo": "13:30-14:30"
-            }
-        ]
-    
+    "12333": {
+        "332211": {
+            "nome": "Eduarda",
+            "cargo": "at1",
+            "presença": "ausente",
+            "horario": "06:00 - 14:20",
+            "intervalo": "10:00-11:00"
+        },
+        "192837": {
+            "nome": "Luana",
+            "cargo": "dermo",
+            "presença": "presente",
+            "horario": "09:30 - 17:50",
+            "intervalo": "13:30-14:30"
+        }
+    }
 }

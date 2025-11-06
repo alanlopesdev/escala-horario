@@ -11,7 +11,7 @@ export default function EscalaHorarios(){
             </header>
             <div className="flex text-black w-250 h-100 justify-center items-center gap-30 flex-col">
                 <div>
-                    <h1>Olá, Deborah! Seja bem-vinda ao Planeja RD</h1>
+                    <h1>Olá, Deborah!</h1>
                 </div>
                 <div className="flex flex-row gap-5">
                 <div className="cursor-pointer flex border-2 border-black justify-center bg-gray-200 p-2 rounded-md min-w-70"><h1>Crie uma escala mensal ou semanal</h1></div>

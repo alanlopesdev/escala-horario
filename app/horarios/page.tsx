@@ -4,7 +4,7 @@ import Image from "next/image";
 import Logoraia from '@/public/imgs/logo-rd.png'
 import { useState, useEffect, use } from "react";
 import db from '@/db.json'
-import {escreverVotosH} from '@/app/horarios/scripts'
+import {ListarHorarioIntervalo, escreverVotosH} from '@/app/horarios/scripts'
 
 export default function Horarios(){
 
@@ -59,24 +59,10 @@ export default function Horarios(){
 
   <div className="flex flex-row gap-5">
   <main className="overflow-y-auto border-black border-2 max-h-115 rounded-md">
-  {funcionarios.map((funcionarios, index) =>(
-  <div key={funcionarios.matricula} className="justify-items-center grid p-1 grid-cols-5">
-      <p className="text-black w-50">{funcionarios.nome}</p>
-      <p className="text-black">{funcionarios.cargo}</p>
-      <p className="text-black">{funcionarios.presença}</p>
-      <p className="text-black">{funcionarios.horario}</p>
-      <form  action="">
-        <select className="cursor-pointer text-black border-2 rounded-md border-blue-200 dark:md:hover:border-blue-600" name="" id="">
-          <option value="">{funcionarios.intervalo}</option>
-          {
-            [2, 3, 4, 5, 6].map((name, index)=>(
-              <option key={index}value="">{11+name}:00-{11+1+name}:00</option>
-            )
-          )}
-        </select>
-      </form>
-  </div>
-    ))}
+    
+  <ListarHorarioIntervalo gerente="12345" matricula="375882"/>
+
+
   </main>
   <aside className="text-black border-2 border-black w-90 p-2 gap-10 rounded-md flex flex-col justify-items-center">
     <header className="justify-center w-90 flex flex-row gap-10">
