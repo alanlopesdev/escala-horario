@@ -13,10 +13,11 @@ export default function Home() {
   const [dados, setDados] = useState({})
   const [islogged, setLogged] = useState(false)
 
-  const EscreverNome = async () =>{
-    if (matricula in db){
+  const Logar = async () =>{
+    const gerente = db.gerentes.find(gerente => gerente.matricula === matricula)
+    if (gerente){
       setLogged(true)
-      setDados(db)
+      setDados(gerente)
 
     }
   }
@@ -46,7 +47,7 @@ if (islogged == false){
         value={matricula} 
         onChange={(e) => setMatricula(e.target.value)}/>
 
-        <button className="cursor-pointer text-black border-1 p-1" onClick={EscreverNome}>Entrar</button>
+        <button className="cursor-pointer text-black border-1 p-1" onClick={Logar}>Entrar</button>
         
       </main>
   </div>
@@ -64,7 +65,7 @@ if (islogged == false){
       </header>
       <main className="flex text-black w-250 h-100 justify-center items-center gap-30 flex-col">
           <div>
-              <h1>Olá, {dados[matricula].gerente}! Seja bem-vinda ao Planeja RD</h1>
+              <h1>Olá, {dados.nome}!</h1>
           </div>
           <nav className="flex flex-row gap-5">
           <Link href="semanal-mensal" className="cursor-pointer flex bg-gray-200 p-2 border-2 border-black rounded-md min-w-70 justify-center">Crie uma escala mensal ou semanal</Link>

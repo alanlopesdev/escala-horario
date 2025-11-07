@@ -1,47 +1,65 @@
 import db from '@/db.json'
 
-type votosPorHora = {
-    pessimos: string
-    ruins: string
-    bons: string
-    otimos: string
-}
-
 const data = db
 
-export function escreverVotosH(matricula:string) : any {
-    const horarios = data[matricula].NSS.votosPorHora
-    const chaves = Object.keys(horarios)
-    return(<div>
-        <h1>Votos ótimos: {horarios[chaves].otimos}</h1>
-        <h1>Votos bons: {horarios[chaves].bons}</h1>
-        <h1>Votos ruins: {horarios[chaves].ruins}</h1>
-        <h1>Votos péssimos: {horarios[chaves].pessimos}</h1>
+export function EscreverVotos({matriculaGerente}) {
+  const gerente = data.gerentes.find(gerente => gerente.matricula === matriculaGerente)
+  const loja_votos = gerente?.loja?.NSS?.total
+  if(!gerente){
+    return(
+      <p>nenhum voto encontrado</p>
+    )}
+
+    return(
+        <div>
+        <h1>Votos totais:{loja_votos}</h1>
         </div>
     )
     }
 
-export function ListarHorarioIntervalo({gerente, matricula}){
-    let funcionario = data[gerente].func
-    let horario = data[gerente].func[matricula].horario
-    horario = horario.split(" - ")
-    const entrada = Number(horario[0].split(":")[0])
+export function ListarFuncionarios({matriculaGerente}){
+    const gerente = data.gerentes.find(gerente => gerente.matricula === matriculaGerente)
+    if(!gerente){
+      return(
+        <p>gerente não encontrado</p>
+      )
+    }
     return (
-            <div key={matricula} className="justify-items-center grid p-1 grid-cols-5">
-            <p className="text-black w-50">{funcionario[matricula].nome}</p>
-            <p className="text-black">{funcionario[matricula].cargo}</p>
-            <p className="text-black">{funcionario[matricula].presença}</p>
-            <p className="text-black">{funcionario[matricula].horario}</p>
+      gerente.funcionarios.map(funcionario => 
+            <div key={funcionario.matricula} className="justify-items-center grid p-1 grid-cols-5">
+            <p className="text-black w-50">{funcionario.nome}</p>
+            <p className="text-black">{funcionario.cargo}</p>
+            <p className="text-black">{funcionario.presenca}</p>
+            <p className="text-black">{funcionario.entrada}</p>
             <form  action="">
-              <select className="cursor-pointer text-black border-2 rounded-md border-blue-200 dark:md:hover:border-blue-600" name="" id="">
-                <option value="">{funcionario[matricula].intervalo}</option>
+              <select className="cursor-pointer text-black border-2 rounded-md border-blue-200 dark:md:hover:border-blue-600" name="selectIntervalo" id="">
+                <option value="">{funcionario.intervalo}</option>
                 {
                   [2, 3, 4, 5, 6].map((name, index)=>(
-                    <option key={index}value="">{entrada+name}:00-{entrada+1+name}:00</option>
+                    <option key={index}value="">{funcionario.entrada+name}:00-{funcionario.entrada+1+name}:00</option>
                   )
                 )}
               </select>
             </form>
-        </div>
+        </div>)
     )
+}
+
+
+export function SugerirIntervalo({matriculaGerente}) {
+  const gerente = data.gerentes.find(gerente => gerente.matricula === matriculaGerente)
+  if (!gerente){
+    return(
+      <div>Nada encontrada</div>
+    )
+  }
+  const funcionarios = gerente.funcionarios.filter(funcionario => funcionario.cargo === "at2")
+  const presentes = funcionarios.filter(funcionarios => funcionarios.presenca === "presente")
+  const quantidadeFunc = presentes.length
+
+  return(
+    <div>
+    <p>{quantidadeFunc}</p>
+    </div>
+  )
 }
