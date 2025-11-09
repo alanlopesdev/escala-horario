@@ -2,7 +2,7 @@ import db from '@/db.json'
 
 const data = db
 
-export function EscreverVotos({matriculaGerente}) {
+export function EscreverVotos(matriculaGerente : any) {
   const gerente = data.gerentes.find(gerente => gerente.matricula === matriculaGerente)
   const loja_votos = gerente?.loja?.NSS?.total
   if(!gerente){
@@ -17,7 +17,7 @@ export function EscreverVotos({matriculaGerente}) {
     )
     }
 
-export function ListarFuncionarios({matriculaGerente}){
+export function ListarFuncionarios(matriculaGerente : any){
     const gerente = data.gerentes.find(gerente => gerente.matricula === matriculaGerente)
     if(!gerente){
       return(
@@ -46,7 +46,7 @@ export function ListarFuncionarios({matriculaGerente}){
 }
 
 
-export function SugerirIntervalo({matriculaGerente}) {
+export function SugerirIntervalo(matriculaGerente : any) {
   const gerente = data.gerentes.find(gerente => gerente.matricula === matriculaGerente)
   if (!gerente){
     return(

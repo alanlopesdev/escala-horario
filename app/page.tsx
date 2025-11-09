@@ -6,11 +6,14 @@ import Logoraia from '@/public/imgs/logo-rd.png'
 import db from "@/db.json"
 import { useState } from "react";
 
-//
-export default function Home() {
 
+export default function Home() {
+  type Gerente = {
+    matricula: string
+    "nome": string}
+  
   const [matricula, setMatricula] = useState("")
-  const [dados, setDados] = useState({})
+  const [dados, setDados] = useState<Gerente | null>(null)
   const [islogged, setLogged] = useState(false)
 
   const Logar = async () =>{
@@ -65,7 +68,7 @@ if (islogged == false){
       </header>
       <main className="flex text-black w-250 h-100 justify-center items-center gap-30 flex-col">
           <div>
-              <h1>Olá, {dados.nome}!</h1>
+              <h1>Olá, {dados?.nome}!</h1>
           </div>
           <nav className="flex flex-row gap-5">
           <Link href="semanal-mensal" className="cursor-pointer flex bg-gray-200 p-2 border-2 border-black rounded-md min-w-70 justify-center">Crie uma escala mensal ou semanal</Link>
