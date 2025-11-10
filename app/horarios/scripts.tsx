@@ -2,7 +2,15 @@ import db from '@/db.json'
 
 const data = db
 
-export function EscreverVotos(matriculaGerente : any) {
+type Gerente = {
+  matriculaGerente : string
+}
+type Matriculas = {
+  matriculaGerente:string 
+  matriculaFuncionario : string
+}
+
+export function EscreverVotos({matriculaGerente} : Gerente) {
   const gerente = data.gerentes.find(gerente => gerente.matricula === matriculaGerente)
   const loja_votos = gerente?.loja?.NSS?.total
   if(!gerente){
@@ -17,7 +25,7 @@ export function EscreverVotos(matriculaGerente : any) {
     )
     }
 
-export function ListarFuncionarios(matriculaGerente : any){
+export function ListarFuncionarios({matriculaGerente} : Gerente){
     const gerente = data.gerentes.find(gerente => gerente.matricula === matriculaGerente)
     if(!gerente){
       return(
@@ -36,7 +44,7 @@ export function ListarFuncionarios(matriculaGerente : any){
                 <option value="">{funcionario.intervalo}</option>
                 {
                   [2, 3, 4, 5, 6].map((name, index)=>(
-                    <option key={index}value="">{funcionario.entrada+name}:00-{funcionario.entrada+1+name}:00</option>
+                    <option key={index}value="">{funcionario.entrada[0]+name}:00-{funcionario.entrada[0]+1+name}:00</option>
                   )
                 )}
               </select>
@@ -46,8 +54,9 @@ export function ListarFuncionarios(matriculaGerente : any){
 }
 
 
-export function SugerirIntervalo(matriculaGerente : any) {
+export function SugerirIntervalo({matriculaGerente, matriculaFuncionario} : Matriculas) {
   const gerente = data.gerentes.find(gerente => gerente.matricula === matriculaGerente)
+  const teste = matriculaFuncionario
   if (!gerente){
     return(
       <div>Nada encontrada</div>
@@ -56,10 +65,18 @@ export function SugerirIntervalo(matriculaGerente : any) {
   const funcionarios = gerente.funcionarios.filter(funcionario => funcionario.cargo === "at2")
   const presentes = funcionarios.filter(funcionarios => funcionarios.presenca === "presente")
   const quantidadeFunc = presentes.length
+  let tirarintervalo = [{}]
+  presentes.forEach(element => { 
+    const intervalo = element.intervalo
+
+    
+  });
 
   return(
     <div>
-    <p>{quantidadeFunc}</p>
+    <p>Não é recomendado ter mais de dois funcionários do mesmo cargo tirando intervalo juntos
+      Não é recomendado um funcionário do intermédio tirar almoço depois do funcionário do fechamento
+    </p>
     </div>
   )
 }

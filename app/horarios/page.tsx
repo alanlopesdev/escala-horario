@@ -65,7 +65,7 @@ export default function Horarios(){
         asideTexto === false && (<div>
           <div className="flex flex-row gap-2">
           <p>Você possui</p>
-          <SugerirIntervalo matriculaGerente={"12345"}/>
+          <SugerirIntervalo matriculaGerente={"12345"} matriculaFuncionario={"3213211"} />
           <p> at2</p>
           </div>
           </div>
