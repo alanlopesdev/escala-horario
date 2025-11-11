@@ -9,6 +9,7 @@ import {EscreverVotos, ListarFuncionarios, SugerirIntervalo} from '@/app/horario
 export default function Horarios(){
     const [dataAtual, setData] = useState(Date())
     const [asideTexto, setAsideTexto] = useState(false)
+    const [intervalosFuncionarios, setIntervalosFuncionarios] = useState<Record<string, string>>({})
 
     const onClickSugestoes = () => {
       setAsideTexto(false)
@@ -16,6 +17,14 @@ export default function Horarios(){
     const onClickNSS = () => {
       setAsideTexto(true)
     }
+    
+    const atualizarIntervalo = (matricula: string, intervalo: string) => {
+      setIntervalosFuncionarios(prev => ({
+        ...prev,
+        [matricula]: intervalo
+      }))
+    }
+    
     const horariosIntervalo = []
     const lista = [0, 1, 2, 3]
     const intervalosPossiveis = [9, 10, 11, 12, 13, 14 , 15, 16, 17, 18, 19]
@@ -46,7 +55,7 @@ export default function Horarios(){
 
   <div className="flex flex-row gap-5">
   <main className="overflow-y-auto border-black border-2 max-h-115 min-h-115 rounded-md">
-   <ListarFuncionarios matriculaGerente={"12345"}/>
+   <ListarFuncionarios matriculaGerente={"12345"} onIntervaloChange={atualizarIntervalo} intervalos={intervalosFuncionarios}/>
   </main>
   <aside className="text-black border-2 border-black w-90 p-2 gap-10 rounded-md flex flex-col justify-items-center">
     <header className="justify-center w-90 flex flex-row gap-10">
@@ -63,11 +72,7 @@ export default function Horarios(){
           <EscreverVotos matriculaGerente={"12345"}/>
         ) ||
         asideTexto === false && (<div>
-          <div className="flex flex-row gap-2">
-          <p>Você possui</p>
-          <SugerirIntervalo matriculaGerente={"12345"} matriculaFuncionario={"3213211"} />
-          <p> at2</p>
-          </div>
+          <SugerirIntervalo matriculaGerente={"12345"} intervalos={intervalosFuncionarios} />
           </div>
         )
       }
