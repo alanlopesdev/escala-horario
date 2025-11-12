@@ -7,20 +7,144 @@
             "NSS":{
                 "media": "95%",
                 "total": 45,
-                "votosHorario" : {
-                    "7" : {
+                "votosHorario" : [
+                    {
+                        "horario": "7",
+                        "total": 7,
                         "o":7,
-                        "b" : 4,
-                        "r" : 2,
-                        "p" : 1
+                        "b" : 0,
+                        "r" : 0,
+                        "p" : 0
                     },
-                    "8" : {
+                    {
+                        "horario": "8",
+                        "total": 6,
                         "o":5,
                         "b" : 1,
                         "r" : 0,
                         "p" : 0
+                    },
+                    {
+                        "horario": "9",
+                        "total": 8,
+                        "o":4,
+                        "b" : 3,
+                        "r" : 1,
+                        "p" : 0
+                    },
+                    {
+                        "horario": "10",
+                        "total": 12,
+                        "o":6,
+                        "b" : 4,
+                        "r" : 1,
+                        "p" : 1
+                    },
+                    {
+                        "horario": "11",
+                        "total": 15,
+                        "o":8,
+                        "b" : 5,
+                        "r" : 1,
+                        "p" : 1
+                    },
+                    {
+                        "horario": "12",
+                        "total": 18,
+                        "o":10,
+                        "b" : 6,
+                        "r" : 1,
+                        "p" : 1
+                    },
+                    {
+                        "horario": "13",
+                        "total": 20,
+                        "o":18,
+                        "b" : 0,
+                        "r" : 1,
+                        "p" : 1
+                    },
+                    {
+                        "horario": "14",
+                        "total": 16,
+                        "o":9,
+                        "b" : 5,
+                        "r" : 1,
+                        "p" : 1
+                    },
+                    {
+                        "horario": "15",
+                        "total": 14,
+                        "o":8,
+                        "b" : 4,
+                        "r" : 1,
+                        "p" : 1
+                    },
+                    {
+                        "horario": "16",
+                        "total": 10,
+                        "o":6,
+                        "b" : 3,
+                        "r" : 1,
+                        "p" : 0
+                    },
+                    {
+                        "horario": "17",
+                        "total": 7,
+                        "o":4,
+                        "b" : 2,
+                        "r" : 1,
+                        "p" : 0
+                    },
+                    {
+                        "horario": "18",
+                        "total": 5,
+                        "o":3,
+                        "b" : 1,
+                        "r" : 1,
+                        "p" : 0
+                    },
+                    {
+                        "horario": "19",
+                        "total": 3,
+                        "o":2,
+                        "b" : 1,
+                        "r" : 0,
+                        "p" : 0
+                    },
+                    {
+                        "horario": "20",
+                        "total": 2,
+                        "o":1,
+                        "b" : 1,
+                        "r" : 0,
+                        "p" : 0
+                    },
+                    {
+                        "horario": "21",
+                        "total": 1,
+                        "o":1,
+                        "b" : 0,
+                        "r" : 0,
+                        "p" : 0
+                    },
+                    {
+                        "horario": "22",
+                        "total": 10,
+                        "o":0,
+                        "b" : 0,
+                        "r" : 0,
+                        "p" : 10
+                    },
+                    {
+                        "horario": "23",
+                        "total": 10,
+                        "o":0,
+                        "b" : 0,
+                        "r" : 0,
+                        "p" : 10
                     }
-                }
+                ]
             }
         },
         "funcionarios":[{
@@ -70,6 +194,126 @@
             "presenca" : "presente",
             "entrada" : "11:00",
             "intervalo": "15:00"
+        },
+        {
+            "matricula" : "0013",
+            "nome": "Mariana",
+            "cargo" : "at2",
+            "presenca" : "presente",
+            "entrada" : "08:00",
+            "intervalo": "12:00"
+        },
+        {
+            "matricula" : "0014",
+            "nome": "Rafael",
+            "cargo" : "at1",
+            "presenca" : "presente",
+            "entrada" : "09:00",
+            "intervalo": "13:00"
+        },
+        {
+            "matricula" : "0015",
+            "nome": "Beatriz",
+            "cargo" : "Farmaceutica",
+            "presenca" : "presente",
+            "entrada" : "10:00",
+            "intervalo": "14:00"
+        },
+        {
+            "matricula" : "0016",
+            "nome": "Thiago",
+            "cargo" : "at2",
+            "presenca" : "presente",
+            "entrada" : "12:00",
+            "intervalo": "16:00"
+        },
+        {
+            "matricula" : "0017",
+            "nome": "Camila",
+            "cargo" : "at2",
+            "presenca" : "presente",
+            "entrada" : "13:00",
+            "intervalo": "17:00"
+        },
+        {
+            "matricula" : "0018",
+            "nome": "Gabriel",
+            "cargo" : "supervisor",
+            "presenca" : "presente",
+            "entrada" : "07:00",
+            "intervalo": "11:00"
+        },
+        {
+            "matricula" : "0019",
+            "nome": "Isabella",
+            "cargo" : "at2",
+            "presenca" : "presente",
+            "entrada" : "14:00",
+            "intervalo": "18:00"
+        },
+        {
+            "matricula" : "0020",
+            "nome": "Lucas",
+            "cargo" : "at1",
+            "presenca" : "presente",
+            "entrada" : "10:00",
+            "intervalo": "14:00"
+        },
+        {
+            "matricula" : "0021",
+            "nome": "Ana",
+            "cargo" : "Farmaceutica",
+            "presenca" : "presente",
+            "entrada" : "08:00",
+            "intervalo": "12:00"
+        },
+        {
+            "matricula" : "0022",
+            "nome": "Pedro",
+            "cargo" : "at2",
+            "presenca" : "presente",
+            "entrada" : "15:00",
+            "intervalo": "19:00"
+        },
+        {
+            "matricula" : "0023",
+            "nome": "Larissa",
+            "cargo" : "at2",
+            "presenca" : "presente",
+            "entrada" : "09:00",
+            "intervalo": "13:00"
+        },
+        {
+            "matricula" : "0024",
+            "nome": "Bruno",
+            "cargo" : "at1",
+            "presenca" : "presente",
+            "entrada" : "11:00",
+            "intervalo": "15:00"
+        },
+        {
+            "matricula" : "0025",
+            "nome": "Julia",
+            "cargo" : "at2",
+            "presenca" : "presente",
+            "entrada" : "12:00",
+            "intervalo": "16:00"
+        },
+        {
+            "matricula" : "0026",
+            "nome": "Felipe",
+            "cargo" : "supervisor",
+            "presenca" : "presente",
+            "entrada" : "08:00",
+            "intervalo": "12:00"
+        },
+        {
+            "matricula" : "0027",
+            "nome": "Amanda",
+            "cargo" : "Farmaceutica",
+            "presenca" : "presente",
+            "entrada" : "13:00",
+            "intervalo": "17:00"
         }
     ]},
     {
