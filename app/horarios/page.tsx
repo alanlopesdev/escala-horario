@@ -4,7 +4,7 @@ import Image from "next/image";
 import Logoraia from '@/public/imgs/logo-rd.png'
 import { useState, useEffect, use } from "react";
 import db from '@/db.json'
-import {EscreverVotos, ListarFuncionarios, SugerirIntervalo, FooterNSS} from '@/app/horarios/scripts'
+import {EscreverVotos, ListarFuncionarios, SugerirIntervalo, FooterNSS, FuncionariosRender} from '@/app/horarios/scripts'
 
 export default function Horarios(){
     const [dataAtual, setData] = useState(Date())

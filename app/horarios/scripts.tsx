@@ -14,6 +14,18 @@ type Matriculas = {
   matriculaGerente:string 
   matriculaFuncionario : string}
 
+
+export function FuncionariosRender(){
+  const [] = useState("")
+    return(
+      <div>
+        <ListarFuncionarios/>
+        <SugerirIntervalo/>
+      </div>
+    )
+
+}
+
 export function EscreverVotos({matriculaGerente} : Gerente) {
   const gerente = data.gerentes.find(gerente => gerente.matricula === matriculaGerente)
   const loja_votos = gerente?.loja?.NSS?.total
@@ -29,34 +41,42 @@ export function EscreverVotos({matriculaGerente} : Gerente) {
     )
     }
 
-export function ListarFuncionarios({matriculaGerente} : Gerente){
+    export function ListarFuncionarios({matriculaGerente} : Gerente){
 
-    const gerente = data.gerentes.find(gerente => gerente.matricula === matriculaGerente)
-    if(!gerente){
-      return(
-        <p>gerente não encontrado</p>
+      const [valueSelect, SetValueSelect] = useState("")
+      const handleChange = (e:any, matricula:string) =>{
+        SetValueSelect(e.target.value)
+        console.log(valueSelect)
+      }
+      const gerente = data.gerentes.find(gerente => gerente.matricula === matriculaGerente)
+      if(!gerente){
+        return(
+          <p>gerente não encontrado</p>
+        )
+      }
+      return (
+        gerente.funcionarios.map(funcionario =>
+              <div key={funcionario.matricula} className="border-1 justify-items-center grid p-1 grid-cols-5">
+              <p className="text-black w-50">{funcionario.nome}</p>
+              <p className="text-black">{funcionario.cargo}</p>
+              <p className="text-black">{funcionario.presenca}</p>
+              <p className="text-black">{funcionario.entrada}</p>
+              <form  action="">
+                <select
+                value={valueSelect}
+                onChange={(e) => handleChange(e, funcionario.matricula)}
+                className="cursor-pointer text-black border-2 rounded-md border-blue-200 dark:md:hover:border-blue-600" name="selectIntervalo" id="">
+                  <option value="">{funcionario.intervalo}</option>
+                  {
+                    [2, 3, 4, 5, 6].map((name, index)=>(
+                      <option key={index}value="">{funcionario.entrada[0]+name}:00-{funcionario.entrada[0]+1+name}:00</option>
+                    )
+                  )}
+                </select>
+              </form>
+          </div>)
       )
-    }
-    return (
-      gerente.funcionarios.map(funcionario => 
-            <div key={funcionario.matricula} className="border-1 justify-items-center grid p-1 grid-cols-5">
-            <p className="text-black w-50">{funcionario.nome}</p>
-            <p className="text-black">{funcionario.cargo}</p>
-            <p className="text-black">{funcionario.presenca}</p>
-            <p className="text-black">{funcionario.entrada}</p>
-            <form  action="">
-              <select className="cursor-pointer text-black border-2 rounded-md border-blue-200 dark:md:hover:border-blue-600" name="selectIntervalo" id="">
-                <option value="">{funcionario.intervalo}</option>
-                {
-                  [2, 3, 4, 5, 6].map((name, index)=>(
-                    <option key={index}value="">{funcionario.entrada[0]+name}:00-{funcionario.entrada[0]+1+name}:00</option>
-                  )
-                )}
-              </select>
-            </form>
-        </div>)
-    )
-}
+  }
 
 
 export function SugerirIntervalo({matriculaGerente, matriculaFuncionario} : Matriculas) {
@@ -97,10 +117,10 @@ export function FooterNSS({matriculaGerente}:Gerente){
 
   const votosHorario = gerente.loja?.NSS.votosHorario.map(votos =>
     <div key={votos.horario}>
-      { ((votos.o*100 + votos.b*75 + votos.r*25 + votos.p*0)/(100*votos.total)) >= 0.90 && <Image src={BolaVerda} width={20} height={20}alt=""/>
-       || (((votos.o*100 + votos.b*75 + votos.r*25 + votos.p*0)/(100*votos.total)) < 0.94 && ((votos.o*100 + votos.b*75 + votos.r*25 + votos.p*0)/(100*votos.total)) > 0.75) && <Image src={BolaAmarela} width={20} height={20}alt=""/>
-       || (((votos.o*100 + votos.b*75 + votos.r*25 + votos.p*0)/(100*votos.total)) < 0.75 && ((votos.o*100 + votos.b*75 + votos.r*25 + votos.p*0)/(100*votos.total)) > 0.50) && <Image src={BolaLaranja} width={20} height={20}alt=""/>
-       || ((votos.o*100 + votos.b*75 + votos.r*25 + votos.p*0)/(100*votos.total)) < 0.50 && <Image src={BolaRoxa} width={20} height={20}alt=""/>}
+      { ((votos.o*100 + votos.b*75 + votos.r*25 + votos.p*0)/(100*votos.total)) >= 0.94 && <Image src={BolaVerda} width={20} height={20}alt=""/>
+       || (((votos.o*100 + votos.b*75 + votos.r*25 + votos.p*0)/(100*votos.total)) < 0.94 && ((votos.o*100 + votos.b*75 + votos.r*25 + votos.p*0)/(100*votos.total)) >= 0.90) && <Image src={BolaAmarela} width={20} height={20}alt=""/>
+       || (((votos.o*100 + votos.b*75 + votos.r*25 + votos.p*0)/(100*votos.total)) < 0.90 && ((votos.o*100 + votos.b*75 + votos.r*25 + votos.p*0)/(100*votos.total)) > 0.75) && <Image src={BolaLaranja} width={20} height={20}alt=""/>
+       || ((votos.o*100 + votos.b*75 + votos.r*25 + votos.p*0)/(100*votos.total)) < 0.75 && <Image src={BolaRoxa} width={20} height={20}alt=""/>}
     </div>)
   
   const horarioFuncionamento = [7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,21,22].map( hora =>
